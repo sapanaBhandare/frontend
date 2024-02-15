@@ -4,17 +4,20 @@ import { CommonModule } from '@angular/common';
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAddComponent } from './product-add/product-add.component';
-import { ProductEditComponent } from './product-edit/product-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductAddComponent,
-    ProductEditComponent,
     HeaderComponent,
+    HomeComponent,
+    CartComponent,
   ],
+  exports:[HeaderComponent],
   imports: [
     CommonModule,
     ProductRoutingModule,

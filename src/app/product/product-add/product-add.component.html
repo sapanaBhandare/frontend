@@ -1,1 +1,12 @@
-<p>product-add works!</p>
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" [formGroup]="productForm" (ngSubmit)="addProduct(productForm.value)">
+      <input type="text" placeholder="Product Name" formControlName="name"/>
+      <textarea type="text" placeholder="description" formControlName="description" ></textarea>
+      <input type="text" placeholder="Product Price" formControlName="price"/>
+      <input type="text" placeholder="Product Quantity" formControlName="unit"/>
+      <input type="text" placeholder="Suplier Name" formControlName="suplierName"/>
+      <button type="submit">Add Product</button>
+    </form>
+  </div>
+</div>

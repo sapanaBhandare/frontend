@@ -50,17 +50,18 @@ export class LoginComponent implements OnInit {
   }
   signIn(data) {
     this.LoginService.login(data).subscribe((res: any) => {
+      localStorage.clear();
       localStorage.setItem('token', res.token);
       localStorage.setItem('userName', res.user.userName);
-      localStorage.setItem('userId', res.user.userId);
-      this.router.navigateByUrl('/product');
+      localStorage.setItem('userId', res.user._id);
+      this.router.navigateByUrl('/product/home');
     });
   }
   signup(data) {
     this.LoginService.register(data).subscribe((res: any) => {
       localStorage.setItem('token', res.token);
       localStorage.setItem('userName', res.user.userName);
-      localStorage.setItem('userId', res.user.userId);
+      localStorage.setItem('userId', res.user._id);
       this.signInRadio=true
     });
   }

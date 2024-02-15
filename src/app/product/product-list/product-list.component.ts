@@ -18,4 +18,13 @@ export class ProductListComponent implements OnInit {
       this.productsList = res;
     });
   }
+  editProduct(product){
+    console.log('edit',product)
+  }
+  deleteProduct(product){
+    this.productService.deleteProduct(product._id).subscribe((res)=>{
+      this.getList();
+    })
+  }
+
 }

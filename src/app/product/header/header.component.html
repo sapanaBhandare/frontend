@@ -1,10 +1,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <header>
   <div class="container">
+    <h3 style="float: left;padding-left: 5px;">{{userName | uppercase}}</h3>
     <ul>
-      <li><a href="#">{{userName | uppercase}}</a></li>
-      <li><a href="#"><i class="fa fa-cart-plus"></i> CART</a></li>
-      <li><button (click)="logout()" >LOGOUT <i class="fa fa-sign-out"></i></button></li>
+      <li><a routerLink="/product/home">HOME</a></li>
+      <li><a routerLink="/product/list"> PRODUCTS</a></li>
+      <li><a href="#"><i class="fa fa-cart-plus"></i> CART <span class="badge">{{cartLength}}</span></a></li>
+      <li><a (click)="logout()" >LOGOUT <i class="fa fa-sign-out"></i></a></li>
       <!-- <li><a href="#">Blog</a></li>
       <li><a href="#">Contact</a></li> -->
     </ul>

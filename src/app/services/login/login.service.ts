@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { Subject, map } from 'rxjs';
 const API_PATH = 'http://localhost:5000/';
 
 @Injectable({
@@ -8,6 +8,8 @@ const API_PATH = 'http://localhost:5000/';
 })
 export class LoginService {
   result;
+
+  loggedIn:Subject<any> = new Subject();
   constructor(private _http: HttpClient) {}
   register(data) {
     const headers = {
@@ -18,6 +20,7 @@ export class LoginService {
       .post<any>(`${API_PATH}users/signup`, data, { headers })
       .pipe(
         map((data) => {
+
           return data;
         })
       );
@@ -32,6 +35,7 @@ export class LoginService {
       .post<any>(`${API_PATH}users/signin`, data, { headers })
       .pipe(
         map((data) => {
+          this.loggedIn.next(true)
           return data;
         })
       );
