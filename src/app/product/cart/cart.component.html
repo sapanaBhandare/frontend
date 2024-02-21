@@ -1,1 +1,32 @@
-<p>cart works!</p>
+
+<div class="shopping-cart">
+  <div class="title">
+    Shopping Bag
+  </div>
+
+  <div class="item" *ngFor="let product of cartProducts">
+    <div class="buttons">
+      <span style="color: red;" (click)="removeProduct(product)"><i class='fa fa-remove'></i></span>
+    </div>
+
+    <div class="image">
+      <img src="https://designmodo.com/demo/shopping-cart/item-1.png" alt="" />
+    </div>
+
+    <div class="description">
+      <span>{{product.name}}</span>
+    </div>
+
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+        <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+        <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+      </button>
+    </div>
+
+    <div class="total-price">{{product.price}}</div>
+  </div>
+</div>

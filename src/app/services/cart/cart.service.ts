@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-const API_PATH = 'http://localhost:5000/';
+const API_PATH = 'http://localhost:7000/';
 
 @Injectable({
   providedIn: 'root',

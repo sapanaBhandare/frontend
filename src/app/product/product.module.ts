@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
+import { NotifierModule } from 'angular-notifier';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CartComponent } from './cart/cart.component';
     ProductRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NotifierModule
   ],
 })
 export class ProductModule {}
